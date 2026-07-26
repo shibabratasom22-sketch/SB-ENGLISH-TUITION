@@ -1,0 +1,399 @@
+
+
+<div id="wallpaperLayer" class="wallpaper-layer" aria-hidden="true">
+  <div class="wallpaper-orb orb-one"></div>
+  <div class="wallpaper-orb orb-two"></div>
+  <div class="wallpaper-grid"></div>
+  <div class="wallpaper-content">
+    <div class="wallpaper-badge">✦ SB ENGLISH TUITION ✦</div>
+    <div class="wallpaper-quote" id="wallpaperQuote"></div>
+    <div class="wallpaper-subtitle" id="wallpaperSubtitle"></div>
+    <div class="wallpaper-mark">SB</div>
+  </div>
+</div>
+
+</div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#24105b">
+<title>SB English Tuition</title>
+<style>
+:root{--purple:#4f1dc9;--deep:#24105b;--gold:#ffd21a;--bg:#f7f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,sans-serif;color:#17133e}
+button,input,select{font:inherit}.top{height:170px;background:linear-gradient(120deg,#1e0a4f,#43118d);color:#fff;padding:25px 30px;position:relative;border-radius:0 0 48% 8%;overflow:hidden}.menu{position:absolute;font-size:35px;top:32px;left:28px}.bell{position:absolute;right:28px;top:27px;font-size:32px}.brand{display:flex;justify-content:center;align-items:center;gap:18px}.logo{width:105px;height:105px;border:4px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:800;font-size:40px}.title{text-align:center}.title h1{font-size:35px;color:var(--gold);margin:0}.title p{font-size:25px;margin:12px 0}
+main{padding:18px 30px 105px}.hero{background:linear-gradient(110deg,#4920ad,#27106c);color:#fff;border-radius:24px;padding:30px 35px;min-height:330px;position:relative;overflow:hidden;box-shadow:0 10px 25px #cfc9e8}.hero h4{font-size:25px;margin:0 0 14px}.hero h2{font-size:42px;margin:0;line-height:1.12}.hero h2 span{color:var(--gold)}.hero p{font-size:22px;max-width:480px;line-height:1.35}.hero button,.gold{border:0;background:var(--gold);padding:15px 28px;border-radius:35px;font-weight:700;cursor:pointer}.hero-art{position:absolute;right:35px;bottom:12px;font-size:125px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:22px}.card{min-height:220px;border-radius:22px;padding:20px;text-align:center;color:#fff;box-shadow:0 7px 15px #ddd}.purple{background:linear-gradient(140deg,#7b55ed,#4a20ca)}.green{background:linear-gradient(140deg,#1bbd78,#0c9a5c)}.orange{background:linear-gradient(140deg,#ff8a1c,#ec4b0d)}.yellow{background:linear-gradient(140deg,#ffd51a,#f1b900);color:#111}.icon{width:70px;height:70px;margin:auto;border-radius:50%;display:grid;place-items:center;background:#ffffff55;font-size:37px}.card h3{margin:14px 0 8px;font-size:20px}.num{font-size:34px;font-weight:bold}.sub{margin-top:10px}
+.lower{display:grid;grid-template-columns:1fr 2fr;gap:20px;margin-top:22px}.collection,.premium{border-radius:22px;padding:23px;min-height:135px}.collection{background:linear-gradient(110deg,#238ee9,#0874d1);color:#fff;font-size:21px}.collection b{font-size:36px}.premium{background:#fff4c8;border:1px solid #efd044;font-size:20px}.premium strong{font-size:26px;color:#5420bb}
+.head{display:flex;justify-content:space-between;align-items:center;margin-top:30px}.head h2{font-size:30px}.actions button{border:0;border-radius:12px;padding:13px 18px;margin-left:8px;cursor:pointer;font-weight:700}.months{display:flex;gap:8px;overflow:auto;background:#fff;padding:9px;border:1px solid #ddd;border-radius:15px}.month{min-width:78px;padding:12px 7px;text-align:center;border:1px solid #eee;border-radius:12px;cursor:pointer}.month.active{background:var(--purple);color:#fff}.filters{display:flex;gap:12px;margin-top:20px}.search,.select{padding:16px;border:1px solid #ddd;border-radius:14px;background:#fff;flex:1}.select{cursor:pointer;color:#555}
+.students{margin-top:20px;display:grid;gap:12px}.student{background:#fff;border-radius:16px;padding:16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 10px #eee}.student small{color:#777}.status{padding:8px 13px;border-radius:20px;border:0;cursor:pointer}.paid{background:#d8f6e6;color:#087d45}.due{background:#ffe1d5;color:#b42d0c}.student-actions button{border:0;background:none;cursor:pointer;font-size:20px;margin-left:8px}.student-actions .wa-btn{background:#25d366;color:#fff;border-radius:50%;width:36px;height:36px;font-size:19px;margin-left:0}
+.bottom{position:fixed;bottom:0;left:0;right:0;height:82px;background:#fff;border-top:1px solid #ddd;display:flex;justify-content:space-around;align-items:center;z-index:5}.nav{text-align:center;color:#555;cursor:pointer;font-size:14px}.nav.active{color:var(--purple)}.plus{width:60px;height:60px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-size:38px;cursor:pointer;box-shadow:0 4px 10px #bbb}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.box{background:#fff;border-radius:22px;padding:24px;width:min(500px,100%);max-height:90vh;overflow:auto}.box h2{margin-top:0}.form{display:grid;gap:12px}.form input,.form select{padding:14px;border:1px solid #ddd;border-radius:12px}.form button{padding:14px;border:0;border-radius:12px;cursor:pointer}.save{background:var(--purple);color:#fff}.cancel{background:#eee}
+@media(max-width:800px){.top{height:145px;padding-top:18px}.logo{width:75px;height:75px;font-size:29px}.title h1{font-size:21px}.title p{font-size:16px}.menu{left:18px;top:25px;font-size:28px}.bell{right:18px;top:20px;font-size:27px}main{padding:12px 15px 100px}.hero{padding:23px;min-height:300px}.hero h4{font-size:19px}.hero h2{font-size:31px}.hero p{font-size:17px;max-width:58%}.hero-art{font-size:78px;right:8px}.cards{grid-template-columns:repeat(2,1fr);gap:11px}.card{min-height:185px;padding:13px}.icon{width:55px;height:55px;font-size:29px}.card h3{font-size:15px}.num{font-size:27px}.sub{font-size:12px}.lower{grid-template-columns:1fr;gap:11px}.head{display:block}.head h2{font-size:26px}.actions{margin-bottom:12px}.actions button{font-size:13px;padding:11px 12px}.filters{display:grid;grid-template-columns:1fr}.student{padding:12px}.student-actions button{font-size:17px}}
+
+.yearbar{background:linear-gradient(110deg,#fffbe0,#fff1a3);padding:12px 14px;border-radius:16px;border:1px solid #e5ca3a;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.year-controls{display:flex;align-items:center;gap:12px;background:#fff7c7;border:1px solid #e6c72c;border-radius:14px;padding:6px 10px;color:#4d1db8}.year-controls button{border:0;background:#ffd21a;width:34px;height:34px;border-radius:10px;font-size:24px;cursor:pointer}.year-controls strong{min-width:55px;text-align:center;font-size:18px}.year-note{background:linear-gradient(110deg,#fff8c7,#fff1a5);border:1px solid #e4c52a;color:#513b00;padding:14px 16px;border-radius:15px;margin-top:18px;font-size:14px}
+@media(max-width:800px){.yearbar{align-items:flex-start;flex-direction:column}.year-controls{align-self:stretch;justify-content:space-between}}
+.year-tap{border:0;background:transparent;color:#4d1db8;font-weight:800;min-width:62px;cursor:pointer;font-size:18px}.year-controls{box-shadow:0 4px 12px #e5d78a}
+.logo{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:.9}.logo span{font-size:42px;font-weight:900;letter-spacing:-3px}.logo small{font-size:10px;letter-spacing:2px;margin-top:7px}.archive-btn{border:1px solid #e4c52a;background:#fff7c7;color:#4e22a8;border-radius:12px;padding:13px 18px;margin-left:8px;cursor:pointer;font-weight:700}.archive-box{max-width:650px}.archive-head{display:flex;justify-content:space-between;align-items:flex-start}.archive-head h2{margin-bottom:6px}.archive-head p{margin-top:0;color:#777}.closex{border:0;background:#f2f2f2;border-radius:50%;width:36px;height:36px;font-size:25px;cursor:pointer}.archived-item{background:#fff9d9;border:1px solid #ecd34b;border-radius:15px;padding:15px;margin:10px 0;display:flex;justify-content:space-between;gap:10px;align-items:center}.restore-btn{border:0;background:#4f1dc9;color:#fff;border-radius:10px;padding:10px 14px;cursor:pointer}.empty-archive{background:#fafafa;border:1px dashed #ccc;border-radius:14px;padding:25px;text-align:center;color:#777}
+
+/* Premium live clock */
+.live-clock-card{
+  margin:16px 0 18px;
+  padding:18px 20px;
+  border-radius:22px;
+  background:linear-gradient(135deg,#fff8b8,#ffe36e 52%,#f8c928);
+  border:1px solid #e2bd27;
+  box-shadow:0 12px 28px rgba(110,77,0,.16);
+  position:relative;
+  overflow:hidden;
+}
+.live-clock-card:after{
+  content:"";
+  position:absolute;right:-45px;top:-55px;width:170px;height:170px;border-radius:50%;
+  background:rgba(255,255,255,.32);
+}
+.clock-top{display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+.clock-kicker{font-size:11px;letter-spacing:2px;font-weight:900;color:#5b3b00;margin-bottom:4px}
+.live-clock{font-size:clamp(32px,7vw,58px);font-weight:950;letter-spacing:2px;line-height:1;color:#2d175e;text-shadow:0 2px 0 rgba(255,255,255,.55)}
+.live-date{font-size:14px;font-weight:700;color:#5b3b00;margin-top:8px}
+.clock-icon{font-size:70px;color:#5b3b00;opacity:.28;line-height:1}
+
+/* Stronger PAID button */
+.status.paid{
+  font-size:15px !important;
+  font-weight:950 !important;
+  letter-spacing:.8px;
+  padding:11px 18px !important;
+  min-width:84px;
+  box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+.status.due{
+  font-size:14px !important;
+  font-weight:900 !important;
+  padding:10px 16px !important;
+}
+
+/* Rotating wallpaper layer */
+.wallpaper-layer{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.wallpaper-content{width:min(1100px,90vw);text-align:center;transform:rotate(-8deg)}
+.wallpaper-quote{
+  font-size:clamp(24px,5vw,70px);font-weight:950;line-height:1.05;
+  color:#4d1db8;letter-spacing:-1px;
+}
+.wallpaper-mark{
+  margin-top:22px;font-size:clamp(70px,14vw,180px);font-weight:950;letter-spacing:-10px;color:#e5b900;
+}
+@media(max-width:700px){
+  .student-actions{display:flex;align-items:center;gap:2px}
+  .status.paid{min-width:78px;padding:10px 13px !important}
+}
+
+/* SUPERB ROTATING WALLPAPER SYSTEM */
+.wallpaper-layer{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+  background:linear-gradient(135deg,#fffdf0 0%,#f7f1ff 42%,#fff8c4 100%);
+  opacity:.42;
+}
+.wallpaper-content{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:28px;transform:translateY(-2vh);
+}
+.wallpaper-badge{
+  font-size:clamp(11px,1.5vw,16px);font-weight:950;letter-spacing:3px;
+  color:#5a2ab4;margin-bottom:20px;
+}
+.wallpaper-quote{
+  max-width:980px;font-size:clamp(32px,6.2vw,88px);font-weight:950;
+  line-height:1.03;letter-spacing:-2px;color:#4a1e9c;
+  text-shadow:0 4px 0 rgba(255,255,255,.8),0 12px 35px rgba(88,38,180,.12);
+}
+.wallpaper-subtitle{
+  max-width:760px;margin-top:18px;font-size:clamp(15px,2vw,25px);
+  font-weight:700;color:#765a00;
+}
+.wallpaper-mark{
+  margin-top:32px;font-size:clamp(100px,18vw,260px);font-weight:950;
+  letter-spacing:-16px;color:#e4b800;opacity:.42;
+}
+.wallpaper-grid{
+  position:absolute;inset:-20%;
+  background-image:linear-gradient(rgba(76,34,156,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(76,34,156,.06) 1px,transparent 1px);
+  background-size:42px 42px;transform:rotate(-8deg);
+}
+.wallpaper-orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.28}
+.orb-one{width:420px;height:420px;left:-120px;top:-120px;background:#f5cf22}
+.orb-two{width:520px;height:520px;right:-180px;bottom:-180px;background:#b69aff}
+.inspiration-card{
+  display:flex;align-items:center;gap:14px;margin:15px 0 18px;padding:16px 20px;
+  border-radius:20px;background:linear-gradient(110deg,#fffbe1,#fff0a0);
+  border:1px solid #e5c63a;box-shadow:0 10px 24px rgba(101,72,0,.12);
+}
+.inspiration-icon{font-size:34px;color:#c99d00}
+.inspiration-label{font-size:10px;font-weight:950;letter-spacing:2px;color:#765a00}
+.inspiration-text{font-size:20px;font-weight:900;color:#4b1d9c;margin-top:4px}
+@media(max-width:700px){
+  .wallpaper-layer{opacity:.30}
+  .wallpaper-quote{letter-spacing:-1px}
+  .wallpaper-mark{letter-spacing:-9px}
+  .inspiration-text{font-size:17px}
+}
+
+.phone-row{display:flex;gap:8px;align-items:center}.phone-row input{flex:1}.contact-btn{white-space:nowrap;border:1px solid #e3c52b;background:#fff7c7;color:#4c1da6;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer}.backup-btn{border:1px solid #e3c52b;background:#fffdf0;color:#4c1da6;border-radius:12px;padding:13px 15px;margin-left:8px;cursor:pointer;font-weight:800}.backup-btn:hover,.contact-btn:hover{background:#ffe878}
+@media(max-width:650px){.phone-row{flex-direction:column;align-items:stretch}.backup-btn{padding:11px 9px;margin-left:3px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="menu">☰</div><div class="bell">♧</div><div class="brand"><div class="logo"><span>SB</span><small>ENGLISH</small></div><div class="title"><h1>SB ENGLISH TUITION</h1><p>Student Fee Manager</p></div></div></header>
+
+<div class="live-clock-card">
+  <div class="clock-top">
+    <div>
+      <div class="clock-kicker">✦ LIVE TIME</div>
+      <div id="liveClock" class="live-clock">00:00:00</div>
+      <div id="liveDate" class="live-date">Loading date...</div>
+    </div>
+    <div class="clock-icon">◷</div>
+  </div>
+</div>
+
+<div class="inspiration-card">
+  <div class="inspiration-icon">✦</div>
+  <div>
+    <div class="inspiration-label">TODAY'S INSPIRATION</div>
+    <div id="inspirationText" class="inspiration-text">Teach. Inspire. Transform.</div>
+  </div>
+</div>
+<main>
+<section class="hero"><h4>WELCOME BACK 👋</h4><h2>Manage your students<br><span>with ease.</span></h2><p>Keep your monthly fees organised in one colourful place.</p><button onclick="showTab('students')">👥 &nbsp; View Students</button><div class="hero-art">📚</div></section>
+<section class="cards"><div class="card purple"><div class="icon">👥</div><h3>Total Students</h3><div class="num" id="total">0 / 100</div><div class="sub">Manage all students</div></div><div class="card green"><div class="icon">✓</div><h3>This Month Paid</h3><div class="num" id="paid">0</div><div class="sub">Students paid</div></div><div class="card orange"><div class="icon">⌛</div><h3>Fees Due</h3><div class="num" id="due">0</div><div class="sub">Pending payments</div></div><div class="card yellow"><div class="icon">₹</div><h3>Monthly Fee</h3><div class="num" id="fee">₹0</div><div class="sub">Expected this month</div></div></section>
+<section class="lower"><div class="collection">💰 &nbsp; Collection<br><b>₹<span id="collection">0</span></b><br><small>Total collection</small></div><div class="premium"><strong>👑 Premium Tuition Management ✨</strong><br><br>Easy • Fast • Secure • Beautiful<br>All in one place</div></section>
+<div class="head"><h2>Monthly Fees</h2><div class="actions"><button onclick="alert('Month selector is ready — choose any month below.')">🗓 View All Months ›</button><button class="backup-btn" onclick="backupData()">⬇️ Backup</button><button class="backup-btn" onclick="document.getElementById('restoreFile').click()">⬆️ Restore</button><input id="restoreFile" type="file" accept=".json,application/json" style="display:none" onchange="restoreData(event)"><button class="archive-btn" onclick="openArchive()">📁 Archive</button><button class="gold" onclick="openModal()">👤+ Add Student</button></div></div>
+<div class="yearbar">
+      <div style="color:#5720c5;font-size:19px">▦ &nbsp; <span id="monthLabel">Current Month</span></div>
+      <div class="year-controls"><button onclick="changeYear(-1)">‹</button><button class="year-tap" onclick="openYearPicker()" id="yearLabel">2026</button><button onclick="changeYear(1)">›</button></div>
+    </div>
+<div class="months" id="months"></div>
+<div class="filters"><input class="search" id="search" placeholder="🔍 Search student name or phone" oninput="renderStudents()"><select class="select" id="classFilter" onchange="renderStudents()"><option value="">🎓 All Classes</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class IX</option><option>Class X</option><option>Class XI</option><option>Class XII</option></select><select class="select" id="statusFilter" onchange="renderStudents()"><option value="">☷ All Status</option><option value="paid">Paid</option><option value="due">Due</option></select></div>
+<div style="margin-top:12px;color:#666;font-size:13px">💬 Tap the WhatsApp button beside a student to send a ready-made fee reminder.</div><div style="margin-top:12px;color:#666;font-size:13px">💬 WhatsApp reminder &nbsp; ✏️ Edit &nbsp; 🗑️ Delete student who leaves tuition</div><div class="year-note">💾 <b>All records are saved year-by-year.</b> Changing the year will not erase old fee records. Students who leave tuition are archived instead of permanently deleting their history.</div><section class="students" id="students"></section>
+</main>
+<nav class="bottom"><div class="nav active" onclick="showTab('home')">⌂<br>Home</div><div class="nav" onclick="showTab('students')">👥<br>Students</div><div class="plus" onclick="openModal()">+</div><div class="nav" onclick="alert('Attendance module ready for expansion.')">☑<br>Attendance</div><div class="nav" onclick="showTab('payments')">▤<br>Payments</div></nav>
+
+<div class="modal" id="archiveModal">
+  <div class="box archive-box">
+    <div class="archive-head"><div><h2>📁 Archived Students</h2><p>Students who left tuition stay here with their full fee history.</p></div><button class="closex" onclick="closeArchive()">×</button></div>
+    <div id="archiveList"></div>
+  </div>
+</div>
+<div class="modal" id="modal"><div class="box"><h2>Add Student</h2><div class="form"><input id="name" placeholder="Student name *"><input id="phone" placeholder="Phone number"><select id="className"><option value="">Select Class</option><option>Class VI</option><option>Class VII</option><option>Class VIII</option><option>Class IX</option><option>Class X</option><option>Class XI</option><option>Class XII</option></select><input id="feeInput" type="number" placeholder="Monthly fee (₹)"><button class="save" onclick="saveStudent()">Save Student</button><button class="cancel" onclick="closeModal()">Cancel</button></div></div></div>
+<script>
+const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const now=new Date();
+let selectedYear=now.getFullYear();
+let selectedMonth=now.getMonth();
+let students=JSON.parse(localStorage.getItem('sb_students_final')||'[]');
+
+function saveAll(){localStorage.setItem('sb_students_final',JSON.stringify(students))}
+function monthKey(){return selectedYear+'-'+String(selectedMonth+1).padStart(2,'0')}
+function monthName(){return months[selectedMonth]+' '+selectedYear}
+function getRecord(s){
+  if(!s.records)s.records={};
+  if(!s.records[monthKey()])s.records[monthKey()]={paid:false,fee:Number(s.defaultFee||s.fee||0)};
+  return s.records[monthKey()];
+}
+function initMonths(){
+  const el=document.getElementById('months');
+  if(el)el.innerHTML=months.map((m,i)=>`<div class="month ${i===selectedMonth?'active':''}" onclick="selectMonth(${i})">${m}<br>${selectedYear}</div>`).join('');
+  document.getElementById('yearLabel').textContent=selectedYear;
+  document.getElementById('monthLabel').textContent=monthName();
+}
+function selectMonth(i){selectedMonth=i;initMonths();update();renderStudents()}
+function changeYear(delta){selectedYear+=delta;initMonths();update();renderStudents()}
+function setYear(y){selectedYear=Number(y);initMonths();update();renderStudents()}
+function openYearPicker(){const y=prompt('Enter year to open:',selectedYear);if(y&&/^\d{4}$/.test(y))setYear(Number(y))}
+function update(){
+  const active=students.filter(s=>!s.archived);
+  const paid=active.filter(s=>getRecord(s).paid).length;
+  const total=active.reduce((a,s)=>a+Number(getRecord(s).fee||s.defaultFee||0),0);
+  const collection=active.filter(s=>getRecord(s).paid).reduce((a,s)=>a+Number(getRecord(s).fee||s.defaultFee||0),0);
+  document.getElementById('total').textContent=active.length+' / 100';
+  document.getElementById('paid').textContent=paid;
+  document.getElementById('due').textContent=active.length-paid;
+  document.getElementById('fee').textContent='₹'+total;
+  document.getElementById('collection').textContent=collection;
+}
+function escapeHtml(x){return String(x).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function renderStudents(){
+  const q=(document.getElementById('search')?.value||'').trim().toLowerCase();
+  const cl=document.getElementById('classFilter')?.value||'';
+  const st=document.getElementById('statusFilter')?.value||'';
+  const list=students.filter(s=>{
+    const r=getRecord(s), name=String(s.name||'').toLowerCase(), phone=String(s.phone||'').replace(/\D/g,''), digits=q.replace(/\D/g,'');
+    const searchMatch=!q||name.includes(q)||(digits&&phone.includes(digits));
+    return !s.archived&&searchMatch&&(!cl||s.className===cl)&&(!st||(st==='paid'?r.paid:!r.paid));
+  });
+  const box=document.getElementById('students');
+  box.innerHTML=list.length?list.map(s=>{
+    const r=getRecord(s);
+    return `<div class="student"><div><b>${escapeHtml(s.name)}</b><br><small>${escapeHtml(s.className||'Class not set')} • ${escapeHtml(s.phone||'No phone')} • ₹${r.fee||0}</small></div><div><button class="status ${r.paid?'paid':'due'}" onclick="togglePaid('${s.id}')">${r.paid?'PAID':'DUE'}</button><span class="student-actions"><button class="wa-btn" title="WhatsApp Fee Reminder" onclick="whatsappReminder('${s.id}')">💬</button><button onclick="editStudent('${s.id}')">✏️</button><button onclick="deleteStudent('${s.id}')">🗑️</button></span></div></div>`;
+  }).join(''):'<div class="student">🔍 No students found.<br><small>Try another name, phone number, class, or status.</small></div>';
+}
+function openModal(){document.getElementById('modal').classList.add('show');document.getElementById('name').focus()}
+function closeModal(){document.getElementById('modal').classList.remove('show');['name','phone','feeInput'].forEach(x=>document.getElementById(x).value='');document.getElementById('className').value=''}
+function saveStudent(){
+  const name=document.getElementById('name').value.trim();if(!name){alert('Please enter student name');return}
+  const fee=Number(document.getElementById('feeInput').value||0);
+  students.push({id:Date.now().toString(),name,phone:document.getElementById('phone').value.trim(),className:document.getElementById('className').value,defaultFee:fee,records:{},archived:false});
+  saveAll();closeModal();update();renderStudents();
+}
+function togglePaid(id){const s=students.find(x=>x.id===id);if(!s)return;getRecord(s).paid=!getRecord(s).paid;saveAll();update();renderStudents()}
+function deleteStudent(id){const s=students.find(x=>x.id===id);if(confirm('Move '+(s?s.name:'this student')+' to Archive?\n\nAll fee history will be kept safely.')){s.archived=true;s.archivedAt=new Date().toISOString();saveAll();update();renderStudents()}}
+function editStudent(id){
+  const s=students.find(x=>x.id===id);if(!s)return;
+  const n=prompt('Student name:',s.name);if(n===null)return;s.name=n.trim()||s.name;
+  const p=prompt('Phone number:',s.phone||'');if(p!==null)s.phone=p;
+  const f=prompt('Default monthly fee (₹):',s.defaultFee||0);if(f!==null)s.defaultFee=Number(f)||0;
+  saveAll();update();renderStudents();
+}
+function whatsappReminder(id){
+  const s=students.find(x=>x.id===id);if(!s)return;
+  if(!s.phone){alert('Please add a phone number first.');return}
+  let phone=s.phone.replace(/\D/g,'');if(phone.length===10)phone='91'+phone;
+  const r=getRecord(s),fee=r.fee||s.defaultFee||0,m=monthName();
+  const message=`Hello ${s.name}'s Guardian 👋
+
+A gentle reminder from SB English Tuition: ₹${fee} tuition fee for ${m} is due.
+
+নমস্কার 🙏 ${s.name}-এর অভিভাবক,
+${m} মাসের ₹${fee} টিউশন ফি বাকি আছে। সুবিধামতো দিয়ে দেবেন।
+
+Thank you / ধন্যবাদ 💛
+— SB English Tuition`;
+  window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(message),'_blank');
+}
+function openArchive(){
+  const list=students.filter(s=>s.archived), box=document.getElementById('archiveList');
+  box.innerHTML=list.length?list.map(s=>`<div class="archived-item"><div><b>${escapeHtml(s.name)}</b><br><small>${escapeHtml(s.className||'Class not set')} • ${escapeHtml(s.phone||'No phone')}</small></div><button class="restore-btn" onclick="restoreStudent('${s.id}')">↩ Restore</button></div>`).join(''):'<div class="empty-archive">📁 No archived students yet.</div>';
+  document.getElementById('archiveModal').classList.add('show');
+}
+function closeArchive(){document.getElementById('archiveModal').classList.remove('show')}
+function restoreStudent(id){const s=students.find(x=>x.id===id);if(s){s.archived=false;delete s.archivedAt;saveAll();update();renderStudents();openArchive()}}
+
+async function pickContact(){
+  if(!('contacts' in navigator) || !navigator.contacts.select){
+    alert('Your browser does not support direct contact selection. Please open this app in a supported Android browser such as Chrome, or enter the number manually.');
+    return;
+  }
+  try{
+    const contacts=await navigator.contacts.select(['name','tel'],{multiple:false});
+    if(!contacts.length)return;
+    const c=contacts[0];
+    const name=Array.isArray(c.name)?c.name[0]:(c.name||'');
+    const phones=Array.isArray(c.tel)?c.tel:[];
+    const phone=phones[0]||'';
+    if(name && !document.getElementById('name').value)document.getElementById('name').value=name;
+    if(phone)document.getElementById('phone').value=phone;
+  }catch(e){}
+}
+function backupData(){
+  const payload={
+    app:'SB English Tuition',
+    version:1,
+    exportedAt:new Date().toISOString(),
+    students:students
+  };
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='SB_English_Tuition_Backup_'+new Date().toISOString().slice(0,10)+'.json';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  alert('Backup created successfully. Keep this file safe.');
+}
+function restoreData(event){
+  const file=event.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(){
+    try{
+      const data=JSON.parse(reader.result);
+      const imported=Array.isArray(data)?data:data.students;
+      if(!Array.isArray(imported))throw new Error('Invalid backup');
+      if(!confirm('Restore this backup? Existing records will be merged safely.'))return;
+      const map=new Map(students.map(s=>[String(s.id),s]));
+      imported.forEach(item=>{
+        if(!item || !item.id)return;
+        const old=map.get(String(item.id));
+        if(!old)map.set(String(item.id),item);
+        else{
+          old.name=item.name||old.name;
+          old.phone=item.phone||old.phone;
+          old.className=item.className||old.className;
+          old.defaultFee=item.defaultFee??old.defaultFee;
+          old.records=Object.assign({},old.records||{},item.records||{});
+          old.archived=typeof item.archived==='boolean'?item.archived:old.archived;
+        }
+      });
+      students=Array.from(map.values());
+      saveAll();update();renderStudents();
+      alert('Backup restored successfully. Your records are safe.');
+    }catch(e){alert('This is not a valid SB English Tuition backup file.')}
+    event.target.value='';
+  };
+  reader.readAsText(file);
+}
+
+function showTab(tab){if(tab==='students')document.getElementById('students').scrollIntoView({behavior:'smooth'});else if(tab==='payments')alert('Payments are managed through each student’s PAID/DUE button.');else window.scrollTo({top:0,behavior:'smooth'})}
+initMonths();update();renderStudents();
+
+// Live digital clock
+function updateLiveClock(){
+  const now=new Date();
+  const clock=document.getElementById('liveClock');
+  const date=document.getElementById('liveDate');
+  if(!clock||!date)return;
+  clock.textContent=new Intl.DateTimeFormat('en-IN',{
+    hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true,timeZone:'Asia/Kolkata'
+  }).format(now);
+  date.textContent=new Intl.DateTimeFormat('en-IN',{
+    weekday:'long',day:'2-digit',month:'long',year:'numeric',timeZone:'Asia/Kolkata'
+  }).format(now);
+}
+updateLiveClock();
+setInterval(updateLiveClock,1000);
+
+// Fresh premium wallpaper/quote on every app open.
+// Uses session-aware rotation so each launch shows a different design.
+const wallpaperSlides=[
+  {q:"Teach. Inspire. Transform.",s:"Every lesson is a little step towards a brighter future."},
+  {q:"Small steps. Big dreams.",s:"Progress begins the moment learning begins."},
+  {q:"Learning today. Leading tomorrow.",s:"The best investment is the knowledge we build every day."},
+  {q:"A great teacher leaves a mark forever.",s:"Because education is not just about lessons—it is about lives."},
+  {q:"Dream. Learn. Achieve.",s:"Believe in the journey. Celebrate every improvement."},
+  {q:"Knowledge grows when it is shared.",s:"A classroom becomes powerful when curiosity is alive."},
+  {q:"Every student has a story.",s:"Together, let us help write a brighter next chapter."},
+  {q:"The future begins with what we learn today.",s:"Keep learning. Keep growing. Keep shining."}
+];
+function setFreshWallpaper(){
+  const key='sb_wallpaper_slide_v2';
+  let last=Number(localStorage.getItem(key)||-1);
+  let next=(last+1)%wallpaperSlides.length;
+  if(next===last)next=(next+1)%wallpaperSlides.length;
+  localStorage.setItem(key,String(next));
+  const slide=wallpaperSlides[next];
+  const q=document.getElementById('wallpaperQuote');
+  const s=document.getElementById('wallpaperSubtitle');
+  const i=document.getElementById('inspirationText');
+  if(q)q.textContent=slide.q;
+  if(s)s.textContent=slide.s;
+  if(i)i.textContent=slide.q;
+}
+setFreshWallpaper();
+
+</script>
+</body></html>
